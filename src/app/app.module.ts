@@ -1,18 +1,26 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { FormComponent } from './form/form.component';
+import { ReCaptchaV3Service } from 'ng-recaptcha';
+
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, RecaptchaModule],
   providers: [
-    provideClientHydration()
+    ReCaptchaV3Service,
+    provideClientHydration(),
+    {
+      provide: RECAPTCHA_V3_SITE_KEY,
+      useValue: '6Lfe0VspAAAAAK7sJXWqPM1JKXsaHJ9buFzVgQKQ',
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
