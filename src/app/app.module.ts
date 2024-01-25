@@ -18,7 +18,7 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaModule } from 'ng-recaptcha';
     provideClientHydration(),
     {
       provide: RECAPTCHA_V3_SITE_KEY,
-      useValue: '6Lfe0VspAAAAAK7sJXWqPM1JKXsaHJ9buFzVgQKQ',
+      useValue: '6Lf531spAAAAAH03JTUWfuQlv2N7YwkiGbECHP_I',
     },
   ],
   bootstrap: [AppComponent],
